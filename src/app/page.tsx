@@ -21,10 +21,10 @@ export default function Home() {
       <Work />
       <Table />
       <Features />
-      {/* <Simple />
+      <Simple />
       <Trade />
       <Faq />
-      <ContactForm /> */}
+      <ContactForm />
     </main>
   );
 }
