@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --shadow-mentor-shadow: 0px 4px 20px rgba(56, 140, 255, 0.1);
+
+  --inset-54\%: 54%;
+  --inset-40\%: 40%;
+
+  --color-primary: #2589f5;        /* light blue - was purple */
+  --color-secondary: #1a6fd4;      /* dark blue - was blue */
+  --color-body-bg: #050d1a;        /* deep navy background */
+  --color-darkmode: #0a1628;       /* dark blue card bg */
+  --color-tablebg: #0d2147;        /* table background */
+  --color-border: #0a1e3d;         /* border color */
+  --color-lightblue: #60b8ff;      /* light blue accent */
+  --color-lightsky: #dff0ff;       /* very light blue */
+  --color-lightpurple: #a8d8ff;    /* was light purple, now light blue */
+
+  --blur-390: 390px;
+
+  --background-image-banner-image: linear-gradient(
+    90deg,
+    #1a6fd480,
+    #2589f580 97.15%
+  );
+  --background-image-simple-bg: linear-gradient(
+    90deg,
+    rgba(26, 111, 212, 0.1),
+    rgba(37, 137, 245, 0.1) 97.15%
+  );
+  --background-image-arrow-bg: url('/images/simple/arrow-bg.png');
+  --background-image-newsletter: url('/images/newsletter/hands.svg');
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  section {
+    @apply py-14 ;
+  }
+
+  h1 {
+    @apply text-white font-bold lg:text-7xl sm:text-6xl text-5xl;
+  }
+
+  h2 {
+    @apply text-lightsky sm:text-5xl text-4xl font-bold;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto w-full px-4;
+  }
+}
+
+html {
+  scroll-behavior:auto
+}
