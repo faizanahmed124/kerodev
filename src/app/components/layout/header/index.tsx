@@ -10,8 +10,8 @@ import HeaderLink from "./navigation/HeaderLink";
 import MobileHeaderLink from "./navigation/MobileHeaderLink";
 
 const Header: React.FC = () => {
-  const [navbarOpen, setNavbarOpen]     = useState(false);
-  const [sticky, setSticky]             = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [sticky, setSticky]         = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
@@ -46,22 +46,6 @@ const Header: React.FC = () => {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
-        .hdr-btn-outline {
-          font-family:'Outfit',sans-serif; font-size:14px; font-weight:600;
-          padding:9px 22px; border-radius:10px;
-          border:1.5px solid #93c5fd; color:#1d4ed8;
-          background:rgba(219,234,254,0.4);
-          transition:all .2s; cursor:pointer; width:100%;
-        }
-        .hdr-btn-outline:hover { background:#dbeafe; border-color:#3b82f6; }
-        .hdr-btn-fill {
-          font-family:'Outfit',sans-serif; font-size:14px; font-weight:600;
-          padding:9px 22px; border-radius:10px; border:none; color:#fff;
-          background:linear-gradient(135deg,#1d4ed8,#38bdf8);
-          box-shadow:0 3px 14px rgba(56,189,248,0.28);
-          transition:all .2s; cursor:pointer; width:100%;
-        }
-        .hdr-btn-fill:hover { box-shadow:0 4px 18px rgba(56,189,248,0.45); }
         @keyframes drawerIn  { from{transform:translateX(100%)} to{transform:translateX(0)} }
         @keyframes drawerOut { from{transform:translateX(0)} to{transform:translateX(100%)} }
         .drawer-open  { animation: drawerIn  .28s cubic-bezier(.4,0,.2,1) forwards; }
@@ -84,30 +68,12 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Logo />
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop nav — pushed to right with ml-auto */}
+          <nav className="hidden lg:flex items-center gap-8 ml-auto">
             {Headerdata.map((item, i) => <HeaderLink key={i} item={item} />)}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              className="hdr-btn-outline"
-              style={{ width: "auto" }}
-              onClick={() => setIsSignInOpen(true)}
-            >
-              Sign In
-            </button>
-            <button
-              className="hdr-btn-fill"
-              style={{ width: "auto" }}
-              onClick={() => setIsSignUpOpen(true)}
-            >
-              Get Started
-            </button>
-          </div>
-
-          {/* Hamburger */}
+          {/* Hamburger — mobile only */}
           <button
             className="flex lg:hidden flex-col gap-1.5 p-2 rounded-lg z-50"
             onClick={() => setNavbarOpen(v => !v)}
@@ -119,10 +85,7 @@ const Header: React.FC = () => {
                 transform: navbarOpen ? "rotate(45deg) translateY(8px)" : "none",
               }} />
             <span className="block h-0.5 w-6 rounded transition-all duration-300"
-              style={{
-                background: "#1e3a5f",
-                opacity: navbarOpen ? 0 : 1,
-              }} />
+              style={{ background: "#1e3a5f", opacity: navbarOpen ? 0 : 1 }} />
             <span className="block h-0.5 w-6 rounded transition-all duration-300"
               style={{
                 background: "#1e3a5f",
@@ -173,19 +136,6 @@ const Header: React.FC = () => {
             <MobileHeaderLink key={i} item={item} />
           ))}
         </nav>
-
-        {/* CTA buttons */}
-        <div className="px-5 py-5 flex flex-col gap-3"
-          style={{ borderTop: "1px solid #f1f5f9" }}>
-          <button className="hdr-btn-outline"
-            onClick={() => { setIsSignInOpen(true); setNavbarOpen(false); }}>
-            Sign In
-          </button>
-          <button className="hdr-btn-fill"
-            onClick={() => { setIsSignUpOpen(true); setNavbarOpen(false); }}>
-            Get Started
-          </button>
-        </div>
       </div>
 
       {/* ── Sign In Modal ── */}
