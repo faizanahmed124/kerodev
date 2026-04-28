@@ -1,10 +1,9 @@
 import { Inter, Syne } from 'next/font/google'
 import './globals.css'
-import Aoscompo from '@/lib/utils/aos'
+// import Aoscompo from '@/lib/utils/aos'
 import ScrollToTop from './components/scroll-to-top'
 import Header from './components/layout/header'
 import Footer from './components/layout/footer'
-import CircuitBackground from './components/CircuitBackground' // ✅ added
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,19 +20,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.className} ${syne.variable}`}>
+<body className={`${inter.className} ${syne.variable} bg-white`}>
 
-        {/* ✅ Circuit background — fixed behind everything */}
-        <CircuitBackground />
 
-        <Aoscompo>
+        {/* <Aoscompo> */}
           {/* ✅ Wrapper ensures all content sits above the background */}
           <div style={{ position: 'relative', zIndex: 1 }}>
             <Header />
             {children}
             <Footer />
           </div>
-        </Aoscompo>
+        {/* </Aoscompo> */}
 
         <ScrollToTop />
 

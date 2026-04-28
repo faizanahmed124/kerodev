@@ -8,15 +8,15 @@
   --inset-54\%: 54%;
   --inset-40\%: 40%;
 
-  --color-primary: #2589f5;        /* light blue - was purple */
-  --color-secondary: #1a6fd4;      /* dark blue - was blue */
-  --color-body-bg: #050d1a;        /* deep navy background */
-  --color-darkmode: #0a1628;       /* dark blue card bg */
-  --color-tablebg: #0d2147;        /* table background */
-  --color-border: #0a1e3d;         /* border color */
+  --color-primary: #2589f5;        /* light blue */
+  --color-secondary: #1a6fd4;      /* dark blue */
+  --color-body-bg: #ffffff;        /* ✅ white background */
+  --color-darkmode: #0d1b35;       /* dark blue card bg (for dark cards) */
+  --color-tablebg: #f0f6ff;        /* light table background */
+  --color-border: #dbeafe;         /* light blue border */
   --color-lightblue: #60b8ff;      /* light blue accent */
-  --color-lightsky: #dff0ff;       /* very light blue */
-  --color-lightpurple: #a8d8ff;    /* was light purple, now light blue */
+  --color-lightsky: #1e3a5f;       /* ✅ dark navy — for headings on white */
+  --color-lightpurple: #0ea5e9;    /* sky blue accent */
 
   --blur-390: 390px;
 
@@ -27,8 +27,8 @@
   );
   --background-image-simple-bg: linear-gradient(
     90deg,
-    rgba(26, 111, 212, 0.1),
-    rgba(37, 137, 245, 0.1) 97.15%
+    rgba(26, 111, 212, 0.05),
+    rgba(37, 137, 245, 0.05) 97.15%
   );
   --background-image-arrow-bg: url('/images/simple/arrow-bg.png');
   --background-image-newsletter: url('/images/newsletter/hands.svg');
@@ -43,16 +43,25 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 
-  section {
-    @apply py-14 ;
+  /* ✅ White background on body */
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
   }
 
+  section {
+    @apply py-14;
+  }
+
+  /* ✅ Dark text for white bg */
   h1 {
-    @apply text-white font-bold lg:text-7xl sm:text-6xl text-5xl;
+    @apply font-bold lg:text-7xl sm:text-6xl text-5xl;
+    color: #0f172a;
   }
 
   h2 {
-    @apply text-lightsky sm:text-5xl text-4xl font-bold;
+    @apply sm:text-5xl text-4xl font-bold;
+    color: #0f172a;
   }
 }
 
@@ -63,5 +72,5 @@
 }
 
 html {
-  scroll-behavior:auto
+  scroll-behavior: auto;
 }

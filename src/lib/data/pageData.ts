@@ -6,12 +6,12 @@ import { SocialType } from "@/app/types/sociallink";
 import { WorkType } from "@/app/types/work";
 
 export const Headerdata: HeaderItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Exchange", href: "/#exchange-section" },
-  { label: "Features", href: "/#features-section" },
-  { label: "FAQ", href: "/#faq-section" },
+  
+  { label: "About", href: "/#about" },
+  { label: "Features", href: "/#TechStacks" },
+  { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact Us", href: "/#contact" },
-  { label: "Docs", href: "/documentation" },
+
 ];
 
 const basePath = process.env.NODE_ENV === "production" ? "/crypto-nextjs" : "";
