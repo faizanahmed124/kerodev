@@ -78,7 +78,7 @@ const Banner = () => {
       `}</style>
 
       <section
-        className="relative pt-32 lg:pt-55  pb-22 lg:pb-68 overflow-hidden"
+        className="relative pt-32 lg:pt-55  pb-10 lg:pb-35 overflow-hidden"
         style={{ background: "#ffffff" }}
       >
 

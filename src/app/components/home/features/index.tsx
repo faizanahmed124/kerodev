@@ -93,8 +93,8 @@ const Features = () => {
               </h5>
               <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
               <p className="relative text-white/40 text-sm leading-relaxed">
-                We provide comprehensive web application development services — from
-                concept to deployment — ensuring your app is robust, scalable, and
+                We provide comprehensive web application development services from
+                concept to deployment  ensuring your app is robust, scalable, and
                 user-friendly at every stage.
               </p>
             </div>
