@@ -22,8 +22,8 @@ export default function Home() {
       <Table />
       <Features />
       <Simple />
-      <Trade />
-      <Faq />
+      {/* <Trade />
+      <Faq /> */}
       <ContactForm />
     </main>
   );
