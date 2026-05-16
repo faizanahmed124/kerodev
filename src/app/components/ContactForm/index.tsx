@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Icon } from "@iconify/react/dist/iconify.js"
+import emailjs from '@emailjs/browser'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +16,10 @@ const ContactForm = () => {
   const [error, setError] = useState('')
   const [isFormValid, setIsFormValid] = useState(false)
 
-  // ✅ APNI EMAIL YAHAN LIKHO
-  const YOUR_EMAIL = 'Faizanahmed1295@gmail.com'
+  // EmailJS Credentials
+  const SERVICE_ID = 'service_jawdxwm'
+  const TEMPLATE_ID = 'template_jzq8m4z'
+  const PUBLIC_KEY = 'YqfqrJVDh8LdgAFIW'
 
   useEffect(() => {
     const isValid = Object.values(formData).every((v) => v.trim() !== '')
@@ -37,39 +40,25 @@ const ContactForm = () => {
     setError('')
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${YOUR_EMAIL}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: `${formData.firstname} ${formData.lastname}`,
+          from_email: formData.email,
+          phone: formData.phnumber,
+          message: formData.Message,
+          reply_to: formData.email,
         },
-        body: JSON.stringify({
-          // Yeh fields aapki email mein nazar aayengi
-          Name: `${formData.firstname} ${formData.lastname}`,
-          Email: formData.email,
-          'Phone Number': formData.phnumber,
-          Message: formData.Message,
+        PUBLIC_KEY
+      )
 
-          // FormSubmit special options
-          _subject: `New Contact Form Message from ${formData.firstname} ${formData.lastname}`,
-          _captcha: 'false',        // Captcha band karo (optional)
-          _template: 'table',       // Email ko table format mein bhejo (clean dikhta hai)
-          _replyto: formData.email, // Reply button click karne se user ko reply jayegi
-        }),
-      })
-
-      const data = await response.json()
-
-      if (data.success === 'true' || data.success === true) {
-        setShowThanks(true)
-        reset()
-        setTimeout(() => setShowThanks(false), 5000)
-      } else {
-        setError('Something went wrong. Please try again.')
-      }
+      setShowThanks(true)
+      reset()
+      setTimeout(() => setShowThanks(false), 5000)
     } catch (err) {
       console.error(err)
-      setError('Network error. Please check your connection and try again.')
+      setError('Something went wrong. Please try again.')
     } finally {
       setLoader(false)
     }
