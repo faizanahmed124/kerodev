@@ -10,7 +10,7 @@ import Faq from "./components/home/faq";
 import ContactForm from "./components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Keridev - Empowering Developers, Accelerating Innovation",
+  title: "Kerodevs - Empowering Developers, Accelerating Innovation",
 };
 
 export default function Home() {
@@ -22,8 +22,8 @@ export default function Home() {
       <Table />
       <Features />
       <Simple />
-      {/* <Trade />
-      <Faq /> */}
+      <Trade />
+      <Faq />
       <ContactForm />
     </main>
   );

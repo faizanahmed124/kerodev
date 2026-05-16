@@ -11,6 +11,7 @@ export const Headerdata: HeaderItem[] = [
   { label: "Features", href: "/#TechStacks" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact Us", href: "/#contact" },
+    { label: "Documentation", href: "/#Documentation" },
 
 ];
 

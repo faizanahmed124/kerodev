@@ -9,7 +9,7 @@ const Work = () => {
 
       <section
        id="about"
-        className="relative py-20"
+        className="relative py-0"
         style={{ background: "#ffffff", fontFamily: "'Outfit', sans-serif" }}
       >
         <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"

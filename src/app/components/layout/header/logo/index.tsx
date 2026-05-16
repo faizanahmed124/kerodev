@@ -11,9 +11,8 @@ const Logo: React.FC = () => {
         height={88}
         style={{
           width: "auto",
-          height: "44px",        // navbar height ke hisaab se
-          objectFit: "contain",
-        }}
+          height: "68px",        // navbar height ke hisaab se
+          objectFit: "contain",        }}
         priority
       />
     </Link>
