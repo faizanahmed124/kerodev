@@ -11,7 +11,6 @@ export const Headerdata: HeaderItem[] = [
   { label: "Features", href: "/#TechStacks" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact Us", href: "/#contact" },
-    { label: "Documentation", href: "/#Documentation" },
 
 ];
 
@@ -118,9 +117,8 @@ export const Sociallinkdata: SocialType[] = [
 ];
 
 export const Footerlinkdata: FooterType[] = [
-  { label: "Home", href: "/" },
-  { label: "Exchange", href: "/#exchange-section" },
-  { label: "Features", href: "/#features-section" },
-  { label: "FAQ", href: "/#faq-section" },
+  { label: "About", href: "/#about" },
+  { label: "Features", href: "/#TechStacks" },
+  { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact Us", href: "/#contact" },
 ];
