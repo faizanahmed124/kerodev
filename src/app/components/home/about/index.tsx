@@ -109,7 +109,7 @@ const Work = () => {
                 <div className="w-8 h-0.5 mb-4 rounded-full" style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }} />
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 400, color: "#94a3b8", lineHeight: 1.75, fontSize: "15px" }}>
                   We leverage modern tools, creative design, and agile processes to
-                  build high-performance solutions focused on real business impact.
+                  build high performance solutions focused on real business impact.
                 </p>
               </div>
             </div>
