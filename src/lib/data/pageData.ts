@@ -8,6 +8,8 @@ import { WorkType } from "@/app/types/work";
 export const Headerdata: HeaderItem[] = [
   
   { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
+  // { label: "Products", href: "/products" },
   { label: "Features", href: "/#TechStacks" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact Us", href: "/#contact" },

@@ -1,22 +1,14 @@
 "use client";
 import { Headerdata } from "@/lib/data/pageData";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import Signin from "../../auth/sign-in";
-import SignUp from "../../auth/sign-up";
 import Logo from "./logo";
 import HeaderLink from "./navigation/HeaderLink";
 import MobileHeaderLink from "./navigation/MobileHeaderLink";
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [sticky, setSticky]         = useState(false);
-  const [isSignInOpen, setIsSignInOpen] = useState(false);
-  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-
-  const signInRef     = useRef<HTMLDivElement>(null);
-  const signUpRef     = useRef<HTMLDivElement>(null);
+  const [sticky, setSticky] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,21 +18,9 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (signInRef.current && !signInRef.current.contains(e.target as Node))
-        setIsSignInOpen(false);
-      if (signUpRef.current && !signUpRef.current.contains(e.target as Node))
-        setIsSignUpOpen(false);
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow =
-      isSignInOpen || isSignUpOpen || navbarOpen ? "hidden" : "";
+    document.body.style.overflow = navbarOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [isSignInOpen, isSignUpOpen, navbarOpen]);
+  }, [navbarOpen]);
 
   return (
     <>
@@ -64,16 +44,10 @@ const Header: React.FC = () => {
         }}
       >
         <div className="container flex items-center justify-between">
-
-          {/* Logo */}
           <Logo />
-
-          {/* Desktop nav — pushed to right with ml-auto */}
           <nav className="hidden lg:flex items-center gap-8 ml-auto">
             {Headerdata.map((item, i) => <HeaderLink key={i} item={item} />)}
           </nav>
-
-          {/* Hamburger — mobile only */}
           <button
             className="flex lg:hidden flex-col gap-1.5 p-2 rounded-lg z-50"
             onClick={() => setNavbarOpen(v => !v)}
@@ -115,7 +89,6 @@ const Header: React.FC = () => {
           borderLeft: "1px solid #e2e8f0",
         }}
       >
-        {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4"
           style={{ borderBottom: "1px solid #f1f5f9" }}>
           <Logo />
@@ -129,50 +102,12 @@ const Header: React.FC = () => {
             <Icon icon="mdi:close" style={{ color: "#64748b", fontSize: 16 }} />
           </button>
         </div>
-
-        {/* Nav links */}
         <nav className="flex-1 overflow-y-auto px-4 py-4">
           {Headerdata.map((item, i) => (
             <MobileHeaderLink key={i} item={item} />
           ))}
         </nav>
       </div>
-
-      {/* ── Sign In Modal ── */}
-      {isSignInOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-[60]"
-          style={{ background: "rgba(15,23,42,0.5)", backdropFilter: "blur(4px)" }}
-          onClick={() => setIsSignInOpen(false)}>
-          <div ref={signInRef}
-            className="relative mx-auto w-full max-w-md rounded-2xl px-8 pt-12 pb-8 text-center"
-            style={{ background: "#fff", boxShadow: "0 20px 60px rgba(30,58,95,0.18)", border: "1px solid #e2e8f0" }}
-            onClick={e => e.stopPropagation()}>
-            <button onClick={() => setIsSignInOpen(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition">
-              <Icon icon="tabler:circle-x" className="text-2xl" />
-            </button>
-            <Signin />
-          </div>
-        </div>
-      )}
-
-      {/* ── Sign Up Modal ── */}
-      {isSignUpOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-[60]"
-          style={{ background: "rgba(15,23,42,0.5)", backdropFilter: "blur(4px)" }}
-          onClick={() => setIsSignUpOpen(false)}>
-          <div ref={signUpRef}
-            className="relative mx-auto w-full max-w-md rounded-2xl px-8 pt-12 pb-8 text-center"
-            style={{ background: "#fff", boxShadow: "0 20px 60px rgba(30,58,95,0.18)", border: "1px solid #e2e8f0" }}
-            onClick={e => e.stopPropagation()}>
-            <button onClick={() => setIsSignUpOpen(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition">
-              <Icon icon="tabler:circle-x" className="text-2xl" />
-            </button>
-            <SignUp />
-          </div>
-        </div>
-      )}
     </>
   );
 };
