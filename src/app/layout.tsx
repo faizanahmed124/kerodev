@@ -4,6 +4,7 @@ import './globals.css'
 import ScrollToTop from './components/scroll-to-top'
 import Header from './components/layout/header'
 import Footer from './components/layout/footer'
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,8 +31,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </div>
-        {/* </Aoscompo> */}
-
+        <Analytics />
         <ScrollToTop />
 
       </body>
