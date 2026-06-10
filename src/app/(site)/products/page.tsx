@@ -8,96 +8,61 @@ export const metadata: Metadata = {
 
 const products = [
   {
-    icon: "🚀",
-    tag: "SaaS",
-    title: "KeroDash",
+    icon: "🩺",
+    tag: "Health AI",
+    title: "ClearMedAI",
     description:
-      "A powerful analytics dashboard for tracking your business KPIs in real-time. Beautiful charts, customizable widgets, and team collaboration built-in.",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    status: "Available",
-    statusColor: "#16a34a",
-    statusBg: "#f0fdf4",
-    color: "#1d4ed8",
+      "An AI-powered platform that converts complex laboratory reports into simple language, highlights abnormal values, provides doctor visit urgency scores, tracks health trends, stores family reports, and enables easy WhatsApp sharing.",
+    status: "Under Development",
+    statusColor: "#f59e0b",
+    statusBg: "#fef3c7",
+    color: "#10b981",
+    bg: "#ecfdf5",
+    price: "Coming Soon",
+
+    features: [
+      "Lab Report Upload + OCR",
+      "Plain Urdu & English Explanation",
+      "Normal / Abnormal Highlights",
+      "Doctor Visit Urgency Score",
+      "Report History & Trend Tracking",
+      "Nearby Specialist Finder",
+      "Family Health Vault",
+      "WhatsApp PDF Sharing",
+    ],
+  },
+
+  {
+    icon: "🕒",
+    tag: "HR Tech",
+    title: "Automated Attendance System",
+    description:
+      "A smart attendance management solution that automates employee check-in/check-out using biometric, QR code, or GPS verification with real-time reporting and payroll integration.",
+    status: "Under Development",
+    statusColor: "#f59e0b",
+    statusBg: "#fef3c7",
+    color: "#2563eb",
     bg: "#eff6ff",
-    price: "Starting at $29/mo",
-  },
-  {
-    icon: "🛒",
-    tag: "E-Commerce",
-    title: "KeroShop",
-    description:
-      "A complete e-commerce solution with product management, payment processing, inventory tracking, and a stunning storefront.",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
-    status: "Available",
-    statusColor: "#16a34a",
-    statusBg: "#f0fdf4",
-    color: "#0369a1",
-    bg: "#f0f9ff",
-    price: "Starting at $49/mo",
-  },
-  {
-    icon: "📋",
-    tag: "Productivity",
-    title: "KeroTask",
-    description:
-      "Project management made simple. Kanban boards, time tracking, team assignments, and deadline reminders all in one place.",
-    tech: ["React", "Node.js", "MongoDB"],
-    status: "Coming Soon",
-    statusColor: "#d97706",
-    statusBg: "#fffbeb",
-    color: "#7c3aed",
-    bg: "#f5f3ff",
-    price: "Free Beta",
-  },
-  {
-    icon: "💬",
-    tag: "Communication",
-    title: "KeroChat",
-    description:
-      "Real-time team communication with channels, direct messages, file sharing, and powerful integrations with your favorite tools.",
-    tech: ["Socket.io", "React", "Redis"],
-    status: "Coming Soon",
-    statusColor: "#d97706",
-    statusBg: "#fffbeb",
-    color: "#0f766e",
-    bg: "#f0fdfa",
-    price: "Free Beta",
-  },
-  {
-    icon: "📊",
-    tag: "Analytics",
-    title: "KeroAnalytics",
-    description:
-      "Privacy-first website analytics. No cookies, no GDPR headaches. Get actionable insights about your visitors without compromising their privacy.",
-    tech: ["Go", "ClickHouse", "React"],
-    status: "In Development",
-    statusColor: "#6366f1",
-    statusBg: "#eef2ff",
-    color: "#4f46e5",
-    bg: "#eef2ff",
-    price: "TBD",
-  },
-  {
-    icon: "🔐",
-    tag: "Security",
-    title: "KeroAuth",
-    description:
-      "Drop-in authentication solution for your apps. Magic links, OAuth, 2FA, and role-based permissions — all ready in minutes.",
-    tech: ["Next.js", "JWT", "PostgreSQL"],
-    status: "In Development",
-    statusColor: "#6366f1",
-    statusBg: "#eef2ff",
-    color: "#dc2626",
-    bg: "#fef2f2",
-    price: "TBD",
+    price: "Coming Soon",
+
+    features: [
+      "Real-time Attendance Tracking",
+      "QR & Biometric Support",
+      "GPS Location Verification",
+      "Shift & Leave Management",
+      "Payroll Integration",
+      "Admin Dashboard",
+      "Attendance Reports",
+      "Employee Mobile App",
+    ],
   },
 ];
 
 const stats = [
-  { number: "6+", label: "Products Built" },
-  { number: "500+", label: "Happy Users" },
-  { number: "99.9%", label: "Uptime" },
-  { number: "24/7", label: "Support" },
+  { number: "2", label: "Products in Development" },
+  { number: "8+", label: "Core Features" },
+  { number: "AI", label: "Powered Solutions" },
+  { number: "24/7", label: "Innovation" },
 ];
 
 export default function ProductsPage() {
@@ -234,13 +199,28 @@ export default function ProductsPage() {
                     {product.description}
                   </p>
 
-                  {/* Tech Stack */}
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "1.25rem" }}>
-                    {product.tech.map((t, j) => (
-                      <span key={j} className="tech-badge">{t}</span>
-                    ))}
-                  </div>
-
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "8px",
+    marginBottom: "1.5rem",
+  }}
+>
+  {product.features?.map((feature, index) => (
+    <span
+      key={index}
+      className="tech-badge"
+      style={{
+        background: "#f8fafc",
+        border: "1px solid #e2e8f0",
+        color: "#334155",
+      }}
+    >
+      ✓ {feature}
+    </span>
+  ))}
+</div>
                   {/* Footer */}
                   <div style={{
                     display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -248,7 +228,7 @@ export default function ProductsPage() {
                   }}>
                     <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "#0f172a" }}>{product.price}</span>
                     <a
-                      href="/contact"
+                      href="/#contact"
                       className="cta-btn"
                       style={{
                         background: product.status === "Available"
@@ -275,7 +255,7 @@ export default function ProductsPage() {
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "2rem" }}>
               Can't find what you're looking for? We build custom software tailored to your exact needs.
             </p>
-            <a href="/contact" style={{
+            <a href="/#contact" style={{
               display: "inline-block", padding: "14px 36px", borderRadius: "999px",
               background: "#fff", color: "#1d4ed8", fontWeight: 700, fontSize: "0.95rem",
               textDecoration: "none", letterSpacing: "0.5px",

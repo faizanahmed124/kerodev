@@ -10,6 +10,7 @@ type FooterType = {
 export const Footerlinkdata: FooterType[] = [
   { label: "About", href: "/#about" },
   { label: "Features", href: "/#TechStacks" },
+     { label: "Products", href: "/products" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact Us", href: "/#contact" },
 ];
