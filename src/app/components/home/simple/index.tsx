@@ -3,100 +3,60 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const base = [
   {
-    name: "Sarah Mitchell",
-    role: "CEO, TechNova",
-    avatar: "SM",
+    name: "Appraisals",
+    role: "Website Development",
+    avatar: "AP",
     rating: 5,
-    text: "Working with this team was an absolute game-changer. They delivered our platform ahead of schedule with flawless execution.",
+    text: "Developed a modern and scalable Next.js website focused on performance, responsiveness, and user experience.",
+    website: "https://appraisals.com"
   },
   {
-    name: "James Okoye",
-    role: "CTO, FinEdge",
-    avatar: "JO",
+    name: "Kaixen ERP",
+    role: "Website + ERP Software",
+    avatar: "KE",
     rating: 5,
-    text: "Their AI integration transformed our product completely. We saw a 3x increase in user engagement within the first month.",
+    text: "Designed and developed a complete ERP solution along with a professional company website to streamline business operations.",
+    website: "https://kaixenerp.com"
   },
   {
-    name: "Lena Hoffmann",
-    role: "Product Lead, CloudBase",
-    avatar: "LH",
+    name: "Umar & Company",
+    role: "Website Development + SEO",
+    avatar: "UC",
     rating: 5,
-    text: "From concept to launch in 6 weeks — I still can't believe how smooth it was. The UI they designed is beautiful and our users love it.",
+    text: "Built a high-performance Next.js website and implemented SEO optimization to improve search visibility.",
+    website: "https://umarandcompany.com"
   },
   {
-    name: "Rafael Torres",
-    role: "Founder, Launchpad",
-    avatar: "RT",
+    name: "Forty Shoes",
+    role: "E-commerce Store",
+    avatar: "FS",
     rating: 5,
-    text: "They don't just build what you ask for — they challenge your thinking and push the product further than you imagined.",
+    text: "Created a complete e-commerce platform with product management, shopping cart, and modern user experience.",
+    website: "https://fortyshoes.com"
   },
   {
-    name: "Aisha Noor",
-    role: "Head of Digital, RetailX",
-    avatar: "AN",
+    name: "Brandify",
+    role: "SEO Services",
+    avatar: "BR",
     rating: 5,
-    text: "Exceptional quality, zero drama. Our e-commerce revamp delivered a 40% improvement in conversion rates.",
-  },
-  {
-    name: "Daniel Kim",
-    role: "VP Engineering, Stackly",
-    avatar: "DK",
-    rating: 5,
-    text: "Incredible work ethic and technical depth. They built our SaaS dashboard from scratch in record time with clean, maintainable code.",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Founder, GrowthAI",
-    avatar: "PS",
-    rating: 5,
-    text: "They understood our vision immediately and executed it perfectly. Communication was always clear and timely throughout.",
-  },
-  {
-    name: "Marco Bianchi",
-    role: "CTO, DataPulse",
-    avatar: "MB",
-    rating: 5,
-    text: "Outstanding technical skills and great project management. Delivered a complex data pipeline on time and within budget.",
-  },
-  {
-    name: "Emma Clarke",
-    role: "Product Manager, Nexify",
-    avatar: "EC",
-    rating: 5,
-    text: "Best development experience I've had in years. Clean architecture, beautiful UI, and zero headaches from start to finish.",
-  },
-  {
-    name: "Tom Nguyen",
-    role: "Founder, BuildFast",
-    avatar: "TN",
-    rating: 5,
-    text: "They took full ownership of the project and delivered something remarkable. The whole process felt smooth and professional.",
-  },
-  {
-    name: "Sofia Reyes",
-    role: "CMO, BrandLoop",
-    avatar: "SR",
-    rating: 5,
-    text: "Our new website doubled our leads in the first week. The design is stunning and perfectly reflects our brand identity.",
-  },
-  {
-    name: "Oliver Hunt",
-    role: "CEO, SpeedApp",
-    avatar: "OH",
-    rating: 5,
-    text: "Responsive, talented, and genuinely passionate about what they build. Kerodev is now our go-to development partner.",
-  },
+    text: "Implemented technical SEO and optimization strategies to improve rankings and online visibility.",
+    website: "https://brandify.com"
+  }
 ];
 
-// Build 4 columns with duplicates — each column gets 4 cards
-// col indices chosen to vary card lengths across columns for masonry feel
-const col1 = [base[0], base[4], base[8],  base[1]];
-const col2 = [base[1], base[5], base[9],  base[3]];
-const col3 = [base[2], base[6], base[10], base[0]];
-const col4 = [base[3], base[7], base[11], base[2]];
+// Pick an item from `base` using modulo, so adding/removing clients
+// from `base` never produces an out-of-range (undefined) entry.
+const pick = (i: number) => base[i % base.length];
+
+// 4 columns x 4 rows = 16 slots, built from the 5 real clients above.
+// Each column mixes a different rotation so the grid doesn't feel repetitive.
+const col1 = [pick(0), pick(4), pick(3), pick(1)];
+const col2 = [pick(1), pick(0), pick(2), pick(4)];
+const col3 = [pick(2), pick(1), pick(4), pick(0)];
+const col4 = [pick(3), pick(2), pick(0), pick(3)];
 
 // blur levels per row index (0 = clear, increases down)
-const blurLevels = [0, 0, 0.4, 1.2];
+const blurLevels = [0, 1, 2.4, 1.2];
 const opacityLevels = [1, 1, 0.6, 0.25];
 
 const TestimonialCard = ({
@@ -165,6 +125,20 @@ const TestimonialCard = ({
           </p>
         </div>
       </div>
+
+      {/* Visit website link */}
+      {t.website && (
+        <a
+          href={t.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs font-medium"
+          style={{ color: "#1d4ed8" }}
+        >
+          Visit Website
+          <Icon icon="mdi:open-in-new" />
+        </a>
+      )}
     </div>
   );
 };

@@ -47,7 +47,7 @@ const Work = () => {
 
             {/* Card 1 */}
             <div className="rounded-3xl p-8 md:p-10 h-[320px] flex flex-col justify-between transition-all duration-500 hover:scale-105 hover:-translate-y-1"
-              style={{ background: "#0d1b35", border: "1.5px solid #38bdf8", boxShadow: "0 2px 16px rgba(30,58,95,0.06)" }}
+              style={{ background: "#071738", border: "1.5px solid #38bdf8", boxShadow: "0 2px 16px rgba(30,58,95,0.06)" }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(56,189,248,0.25)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(30,58,95,0.06)"; }}
             >
