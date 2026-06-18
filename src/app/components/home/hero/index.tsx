@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState, useEffect, Fragment } from "react";
 
 /* ─── Constants ─────────────────────────────────────────────────────── */
-const WORDS = ["Digital Solutions.", "Smart Systems.", "AI Powered."];
+const WORDS = ["Digital Solutions.", "Smart Systems.", "AI Products."];
 
 const STATS = [
   { icon: "mdi:cube-outline",             v: "10+", l: "PROJECTS DELIVERED"  },

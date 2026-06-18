@@ -11,7 +11,6 @@
     "deploy": "npm run export && touch out/.nojekyll"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^2.2.0",
     "@iconify/icons-ion": "^1.2.10",
     "@iconify/react": "^5.0.1",
@@ -24,6 +23,7 @@
     "next": "^16.2.6",
     "next-auth": "^4.24.7",
     "next-themes": "^0.3.0",
+    "nodemailer": "^9.0.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hot-toast": "^2.4.1",
@@ -36,6 +36,7 @@
     "@tailwindcss/postcss": "^4.1.7",
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.1",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "@types/react-slick": "^0.23.13",

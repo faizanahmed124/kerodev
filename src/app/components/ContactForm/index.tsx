@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Icon } from "@iconify/react/dist/iconify.js"
-import emailjs from '@emailjs/browser'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +14,6 @@ const ContactForm = () => {
   const [loader, setLoader] = useState(false)
   const [error, setError] = useState('')
   const [isFormValid, setIsFormValid] = useState(false)
-
-  // EmailJS Credentials
-  const SERVICE_ID = 'service_jawdxwm'
-  const TEMPLATE_ID = 'template_jzq8m4z'
-  const PUBLIC_KEY = 'YqfqrJVDh8LdgAFIW'
 
   useEffect(() => {
     const isValid = Object.values(formData).every((v) => v.trim() !== '')
@@ -40,25 +34,23 @@ const ContactForm = () => {
     setError('')
 
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: `${formData.firstname} ${formData.lastname}`,
-          from_email: formData.email,
-          phone: formData.phnumber,
-          message: formData.Message,
-          reply_to: formData.email,
-        },
-        PUBLIC_KEY
-      )
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong.')
+      }
 
       setShowThanks(true)
       reset()
       setTimeout(() => setShowThanks(false), 5000)
-    } catch (err) {
-      console.error(err)
-      setError('Something went wrong. Please try again.')
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     } finally {
       setLoader(false)
     }
@@ -286,7 +278,6 @@ const ContactForm = () => {
                   )}
                 </button>
 
-                {/* Thank you toast */}
                 {showThanks && (
                   <div
                     className="flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium"
