@@ -1,3 +1,5 @@
+export const runtime = 'nodejs' // Force Node.js runtime — required for nodemailer
+
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
