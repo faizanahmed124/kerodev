@@ -191,7 +191,7 @@ const Testimonials = () => (
             style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }} />
           <p className="max-w-2xl mx-auto"
             style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 400, color: "#475569", fontSize: "16px", lineHeight: 1.8 }}>
-            We're proud to have worked with amazing teams globally. Here's what they say about working with Kerodev.
+            We're proud to have worked with amazing teams globally. Here's what they say about working with Kerodevs.
           </p>
         </div>
 

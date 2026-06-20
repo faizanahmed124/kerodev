@@ -8,7 +8,7 @@ const Work = () => {
       `}</style>
 
       <section
-       id="about"
+        id="about"
         className="relative py-0"
         style={{ background: "#ffffff", fontFamily: "'Outfit', sans-serif" }}
       >
@@ -33,12 +33,9 @@ const Work = () => {
               style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }} />
             <p className="max-w-4xl mx-auto md:text-lg md:leading-9 leading-8"
               style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 400, color: "#475569", letterSpacing: "0.2px" }}>
-              At Kerodev, we go beyond conventional development to craft intelligent,
-              future-ready digital solutions that truly make a difference. Blending
-              innovation with precision, our team builds high-performance web and
-              mobile applications alongside cutting-edge AI systems designed to solve
-              complex challenges. We believe in clean code, seamless user experiences,
-              and scalable architectures that grow with your business.
+              At Kerodevs, we help businesses grow through innovative web development, mobile app development, and custom software solutions. Our team creates secure, scalable, and user-focused digital products that solve real business challenges and deliver measurable results.
+
+              By combining modern technology, creative design, and strategic thinking, we build high-performance applications that support digital transformation and long-term success. From startups to enterprises, Kerodevs is committed to delivering reliable, future-ready solutions that help businesses stay ahead in a competitive market.
             </p>
           </div>
 
@@ -62,8 +59,7 @@ const Work = () => {
                 </h3>
                 <div className="w-8 h-0.5 mb-4 rounded-full" style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }} />
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 400, color: "#94a3b8", lineHeight: 1.75, fontSize: "15px" }}>
-                  To deliver innovative and scalable digital solutions that empower
-                  businesses to grow, adapt, and succeed in a fast-changing digital world.
+                  To empower businesses through innovative software development services, cutting-edge technology, and scalable digital solutions that improve efficiency, enhance user experiences, and drive sustainable growth
                 </p>
               </div>
             </div>
@@ -85,8 +81,7 @@ const Work = () => {
                 </h3>
                 <div className="w-8 h-0.5 mb-4 rounded-full" style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }} />
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 400, color: "#94a3b8", lineHeight: 1.75, fontSize: "15px" }}>
-                  To lead the future of digital innovation by building intelligent
-                  products that redefine how businesses interact with technology.
+                  To become a globally recognized technology company by creating intelligent digital products, transforming industries through innovation, and shaping the future with AI-driven solutions.
                 </p>
               </div>
             </div>
@@ -108,8 +103,7 @@ const Work = () => {
                 </h3>
                 <div className="w-8 h-0.5 mb-4 rounded-full" style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }} />
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 400, color: "#94a3b8", lineHeight: 1.75, fontSize: "15px" }}>
-                  We leverage modern tools, creative design, and agile processes to
-                  build high performance solutions focused on real business impact.
+                  We leverage modern technologies, agile development methodologies, and data-driven strategies to deliver secure, scalable, and future-ready software solutions tailored to our clients' unique business needs.
                 </p>
               </div>
             </div>
