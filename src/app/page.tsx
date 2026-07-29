@@ -1,10 +1,8 @@
 import { Metadata } from "next";
 import Banner from "./components/home/hero";
-// import Companies from "./components/home/companies";
 import Table from "./components/home/table";
 import Features from "./components/home/features";
 import Simple from "./components/home/simple";
-import Trade from "./components/home/trade";
 import ContactForm from "./components/ContactForm";
 
 export const metadata: Metadata = {
@@ -82,7 +80,8 @@ export default function Home() {
       <Table />
       <Features />
       <Simple />
-     
+      
+      <ContactForm />
     </main>
   );
 }
