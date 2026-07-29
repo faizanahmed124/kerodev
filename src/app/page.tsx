@@ -5,7 +5,6 @@ import Table from "./components/home/table";
 import Features from "./components/home/features";
 import Simple from "./components/home/simple";
 import Trade from "./components/home/trade";
-import Faq from "./components/home/faq";
 import ContactForm from "./components/ContactForm";
 
 export const metadata: Metadata = {
@@ -83,9 +82,7 @@ export default function Home() {
       <Table />
       <Features />
       <Simple />
-      {/* <Trade />
-      <Faq /> */}
-      <ContactForm />
+     
     </main>
   );
 }
