@@ -18,6 +18,7 @@ const serviceCategories = [
       { name: "Mobile App Development", desc: "Cross-platform iOS and Android apps using React Native and Flutter." },
       { name: "Web App Development", desc: "Modern, scalable web applications with cutting-edge technologies." },
       { name: "AI & ML Development", desc: "Intelligent systems and machine learning models for automation and insights." },
+      { name: "Video Analytics & Computer Vision Solutions", desc: "Real-time object detection, facial recognition, and intelligent video monitoring systems powered by advanced computer vision." },
       { name: "Cloud & DevOps", desc: "Cloud infrastructure setup, CI/CD pipelines, and DevOps best practices." },
       { name: "QA And Testing", desc: "Comprehensive quality assurance to ensure bug-free, reliable software." },
     ],
@@ -44,22 +45,10 @@ const serviceCategories = [
     color: "#7c3aed",
     bg: "#f5f3ff",
     services: [
-      {
-  name: "ERPNext Customization",
-  desc: "Custom ERPNext modules, workflows, and integrations tailored to your exact business processes."
-},
-{
-  name: "ERPNext Implementation",
-  desc: "End-to-end ERPNext setup, configuration, data migration, and user training for smooth go-live."
-},
-{
-  name: "ERPNext Integration",
-  desc: "Connect ERPNext with payment gateways, CRMs, e-commerce platforms, and third-party APIs."
-},
-{
-  name: "ERPNext Support & Maintenance",
-  desc: "Proactive bug fixes, upgrades, and performance optimization to keep your system running smoothly."
-},
+      { name: "ERPNext Customization", desc: "Custom ERPNext modules, workflows, and integrations tailored to your exact business processes." },
+      { name: "ERPNext Implementation", desc: "End-to-end ERPNext setup, configuration, data migration, and user training for smooth go-live." },
+      { name: "ERPNext Integration", desc: "Connect ERPNext with payment gateways, CRMs, e-commerce platforms, and third-party APIs." },
+      { name: "ERPNext Support & Maintenance", desc: "Proactive bug fixes, upgrades, and performance optimization to keep your system running smoothly." },
     ],
   },
   {
@@ -275,3 +264,5 @@ export default function ServicesPage() {
     </>
   );
 }
+
+

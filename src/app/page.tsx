@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Banner from "./components/home/hero";
 // import Companies from "./components/home/companies";
-import Work from "./components/home/about";
 import Table from "./components/home/table";
 import Features from "./components/home/features";
 import Simple from "./components/home/simple";
@@ -81,8 +80,6 @@ export default function Home() {
   return (
     <main>
       <Banner />
-      {/* <Companies /> */}
-      <Work />
       <Table />
       <Features />
       <Simple />
